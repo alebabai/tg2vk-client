@@ -5,9 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 
-import HomePage from '../pages/home/HomePage'
-import RevokeTokenPage from '../pages/revoke-token/RevokeTokenPage'
-import SettingsPage from '../pages/settings/SettingsPage'
+import { Home, RevokeToken, Settings } from '../views'
 
 import './App.css'
 
@@ -22,9 +20,9 @@ class App extends Component {
             <li><Link to="/settings">Settings</Link></li>
           </ul>
           <hr />
-          <Route exact path="/" component={HomePage} />
-          <Route path="/revoke-token" component={RevokeTokenPage} />
-          <Route path="/settings" component={SettingsPage} />
+          <Route exact path="/" component={Home} />
+          <Route path="/revoke-token" component={RevokeToken} />
+          <Route path="/settings" component={Settings} />
         </div>
       </Router>
     )
