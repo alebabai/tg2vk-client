@@ -1,29 +1,41 @@
 import React, { Component } from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+
+import createHistory from 'history/createBrowserHistory'
+import { Route } from 'react-router'
+
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
+
+import Header from '../Header'
 import { Home, RevokeToken, Settings } from '../Views'
 import './App.css'
+
+const history = createHistory()
+
+const middleware = routerMiddleware(history)
+
+const store = createStore(
+  combineReducers({
+    router: routerReducer
+  }),
+  applyMiddleware(middleware)
+)
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/revoke-token">Revoke Token</Link></li>
-            <li><Link to="/settings">Settings</Link></li>
-          </ul>
-          <hr />
-          <Route exact path="/" component={Home} />
-          <Route path="/revoke-token" component={RevokeToken} />
-          <Route path="/settings" component={Settings} />
-        </div>
-      </Router>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <div>
+            <Header />
+            <Route exact path="/" component={Home} />
+            <Route path="/revoke-token" component={RevokeToken} />
+            <Route path="/settings" component={Settings} />
+          </div>
+        </ConnectedRouter>
+      </Provider>
     )
   }
 }
