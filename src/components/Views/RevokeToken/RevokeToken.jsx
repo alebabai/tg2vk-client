@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class RevokeToken extends Component {
-    render() {
-        return (
-            <div>
-                <h2>Revoke Token</h2>
-            </div>
-        )
-    }
-}
+const RevokeToken = () => (
+    <div>
+        <h2>Home</h2>
+    </div>
+)
+
+export default RevokeToken

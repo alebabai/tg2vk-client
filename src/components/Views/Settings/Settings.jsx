@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Settings extends Component {
-    render() {
-        return (
-            <div>
-                <h2>Settings</h2>
-            </div>
-        )
-    }
-}
+const Settings = () => (
+    <div>
+        <h2>Home</h2>
+    </div>
+)
+
+export default Settings

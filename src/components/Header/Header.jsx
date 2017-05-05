@@ -5,7 +5,7 @@ const Header = () => (
     <Navbar collapseOnSelect fluid>
         <Navbar.Header>
             <Navbar.Brand>
-                <span>React-Bootstrap</span>
+                <span>TG2VK</span>
             </Navbar.Brand>
             <Navbar.Toggle />
         </Navbar.Header>
