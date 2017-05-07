@@ -1,4 +1,4 @@
-import * as constants from '../constants'
+import { USER as userActionTypes} from '../constants/actionTypes'
 
 const initialState = {
     signedIn: false,
@@ -7,7 +7,7 @@ const initialState = {
 
 export const singIn = (state = initialState, action) => {
     switch (action.type) {
-        case constants.SING_IN:
+        case userActionTypes.SING_IN:
             return {
                 ...state, ...action.payload, signedIn: true
             }
