@@ -1,32 +1,43 @@
-@keyframes spinner {
+@-webkit-keyframes spinner {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes spinner {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
 .spinner {
   position: fixed;
-  width: 34px;
-  height: 34px;
   top: 50%;
   left: 50%;
-  margin-left: -17px;
-  margin-top: -17px; }
-
-.spinner:after, .spinner:before {
-  content: '';
-  position: fixed;
-  border: 2px solid #505050;
-  width: 30px;
-  height: 30px; }
-
-.spinner:after {
-  animation: spinner 2.5s linear infinite; }
-
-.spinner:before {
-  width: 44px;
-  height: 44px;
-  margin-left: -7px;
-  margin-top: -7px;
-  animation: spinner 2.5s linear infinite;
-  animation-direction: reverse; }
+  width: 136px;
+  height: 136px;
+  margin-left: -68px;
+  margin-top: -68px; }
+  .spinner:after, .spinner:before {
+    content: '';
+    position: fixed;
+    border: 2.5px solid gray;
+    width: 120px;
+    height: 120px; }
+  .spinner:after {
+    -webkit-animation: spinner 8s linear infinite;
+    animation: spinner 8s linear infinite; }
+  .spinner:before {
+    border-radius: 20px;
+    width: 176px;
+    height: 176px;
+    margin-left: -28px;
+    margin-top: -28px;
+    -webkit-animation: spinner 16s linear infinite;
+    animation: spinner 16s linear infinite;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse; }
