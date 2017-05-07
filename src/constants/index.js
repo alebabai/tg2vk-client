@@ -1,1 +1,1 @@
-export const SING_IN = 'SING_IN'
+export { default as actionTypes } from './actionTypes'

@@ -1,5 +1,5 @@
-import * as constants from '../constants'
+import { actionTypes } from '../constants'
 
 export const SING_IN = {
-   type: constants.SING_IN 
+   type: actionTypes.USER.SING_IN 
 }

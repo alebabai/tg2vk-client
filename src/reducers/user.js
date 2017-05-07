@@ -6,10 +6,12 @@ const initialState = {
 }
 
 export const singIn = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case constants.SING_IN:
             return {
                 ...state, ...action.payload, signedIn: true
             }
+        default:
+            return initialState
     }
 }
