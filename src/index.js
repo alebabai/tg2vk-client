@@ -36,7 +36,7 @@ ReactDOM.render(
         <Route path="/revoke-token" component={RevokeToken} />
         <Route path="/settings" component={Settings} />
         <Route path="/sign-in" component={SignIn} />
-        <Route path="/error" component={ErrorMessage("Tu petuh")} />
+        <Route path="/error" component={ErrorMessage()} />
       </App>
     </ConnectedRouter>
   </Provider>,
