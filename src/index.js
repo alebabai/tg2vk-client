@@ -14,7 +14,7 @@ import App from './components/App'
 import { Home, RevokeToken, Settings, SignIn } from './components/Views'
 import reducers from './reducers'
 
-import './index.css';
+import './index.css'
 
 const history = createHistory()
 

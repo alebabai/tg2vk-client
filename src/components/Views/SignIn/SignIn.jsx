@@ -1,9 +1,8 @@
 import React from 'react'
+import Spinner from '../../Spinner'
 
 const SignIn = () => (
-    <div>
-        <h2>Sign in - SPINNER</h2>
-    </div>
+    <Spinner />
 )
 
 export default SignIn
