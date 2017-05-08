@@ -11,8 +11,8 @@ import { Route, Switch } from 'react-router'
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 
 import App from './components/App'
-import { Home, RevokeToken, Settings, ErrorMessage } from './components/Views'
-import { SignIn } from './containers'
+import { Home, Settings, ErrorMessage } from './components/Views'
+import { SignIn, RevokeToken } from './containers'
 import reducers from './reducers'
 import { tokenStorageMiddleware } from './middlewares'
 

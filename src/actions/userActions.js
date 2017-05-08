@@ -6,3 +6,10 @@ export const signIn = (token) => ({
        token
    }
 })
+
+export const revokeToken = (code) => ({
+   type: ACTION_TYPES.USER.REVOKE_TOKEN,
+   payload: {
+       code
+   }
+})
