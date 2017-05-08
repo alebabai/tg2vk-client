@@ -1,7 +1,34 @@
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { SignIn as SignInView } from '../components/Views'
+import { userActions } from '../actions'
+import { SignIn } from '../components/Views'
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    const token = ownProps.location.hash.substr(1);
+    return {
+        implicitFlow: !!token,
+        triggerSingInFlow: (tokenParam = token) => {
+            if(!!tokenParam) {
+                dispatch(userActions.signIn(tokenParam))
+            }
+        }
+    }
+}
+
+class SingInContainer extends Component {
+
+    componentDidMount() {
+        if (this.props.implicitFlow) {
+            this.props.triggerSingInFlow()
+        }
+    }
+
+    render() {
+        return <SignIn props={this.props} />
+    }
+}
 
 export default connect(
     null,
-    null
-)(SignInView)
+    mapDispatchToProps
+)(SingInContainer)

@@ -36,7 +36,7 @@ ReactDOM.render(
           <Route exact path="/" component={Home} />
           <Route path="/revoke-token" component={RevokeToken} />
           <Route path="/settings" component={Settings} />
-          <Route path="/sign-in#:token" component={SignIn} />
+          <Route path="/sign-in" component={SignIn} />
           <Route component={ErrorMessage({ message: 'Page not found' })} />
         </Switch>
       </App>
