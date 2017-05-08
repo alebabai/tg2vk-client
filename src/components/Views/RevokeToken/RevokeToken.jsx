@@ -1,12 +1,22 @@
 import React, { Component } from 'react'
-import { Panel, FormGroup, FormControl, HelpBlock, Button, ButtonToolbar } from 'react-bootstrap'
+import { Panel, FormGroup, FormControl, HelpBlock, Button, ButtonToolbar, Modal } from 'react-bootstrap'
 
 class RevokeToken extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: ''
+            value: '',
+            showModal: false
         }
+    }
+
+    showDialog = () => {
+        const code = this.state.code
+        code && this.setState({ showModal: true })
+    }
+
+    closeDialog = () => {
+        this.setState({ showModal: false })
     }
 
     getValidationState = () => {
@@ -16,7 +26,7 @@ class RevokeToken extends Component {
 
     handleChange = (e) => {
         const value = e.target.value
-        const result = /#code?=(.*)/.exec(value)
+        const result = /#code?=(.+)/.exec(value)
         const code = result && result[1]
         this.setState({ value, code })
     }
@@ -24,6 +34,7 @@ class RevokeToken extends Component {
     sendToken = () => {
         const code = this.state.code
         code && this.props.revokeToken(this.state.code)
+        this.closeDialog()
     }
 
     render() {
@@ -42,11 +53,24 @@ class RevokeToken extends Component {
                             <FormControl.Feedback />
                             <HelpBlock>Please, provide full url from <a href='https://oauth.vk.com/'>https://oauth.vk.com/</a></HelpBlock>
                             <ButtonToolbar>
-                                <Button onClick={this.sendToken} bsSize='large' block>Send token</Button>
+                                <Button onClick={this.showDialog} bsSize='large' block>Send token</Button>
                             </ButtonToolbar>
                         </FormGroup>
                     </form>
                 </Panel>
+                <Modal show={this.state.showModal} onHide={this.closeDialog}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Warning!</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <h4>Are you sure?</h4>
+                        <p>It will reset all your TG2VK setting.</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={this.sendToken}>OK</Button>
+                        <Button onClick={this.closeDialog}>Cancel</Button>
+                    </Modal.Footer>
+                </Modal>
             </div>
         )
     }
