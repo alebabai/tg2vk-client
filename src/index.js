@@ -14,6 +14,7 @@ import App from './components/App'
 import { Home, RevokeToken, Settings, ErrorMessage } from './components/Views'
 import { SignIn } from './containers'
 import reducers from './reducers'
+import { checkAuthMiddleware, tokenStorageMiddleware } from './middlewares'
 
 const history = createHistory()
 
@@ -22,10 +23,10 @@ const reduxRouterMiddleware = routerMiddleware(history)
 
 const store = createStore(
   combineReducers({
-    ...reducers,
+    app: reducers,
     router: routerReducer
   }),
-  applyMiddleware(logger, reduxRouterMiddleware)
+  applyMiddleware(checkAuthMiddleware, tokenStorageMiddleware, logger, reduxRouterMiddleware)
 )
 
 ReactDOM.render(
