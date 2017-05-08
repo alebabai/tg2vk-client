@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { createLogger } from 'redux-logger'
 
 import createHistory from 'history/createBrowserHistory'
-import { Route } from 'react-router'
+import { Route, Switch } from 'react-router'
 
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 
@@ -32,11 +32,13 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <App>
-        <Route exact path="/" component={Home} />
-        <Route path="/revoke-token" component={RevokeToken} />
-        <Route path="/settings" component={Settings} />
-        <Route path="/sign-in" component={SignIn} />
-        <Route path="/error" component={ErrorMessage()} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/revoke-token" component={RevokeToken} />
+          <Route path="/settings" component={Settings} />
+          <Route path="/sign-in#:token" component={SignIn} />
+          <Route component={ErrorMessage({ message: 'Page not found' })} />
+        </Switch>
       </App>
     </ConnectedRouter>
   </Provider>,
