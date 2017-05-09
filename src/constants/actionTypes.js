@@ -4,11 +4,11 @@ export const USER = {
 }
 
 export const NOTIFICATION = {
-    SHOW: 'SHOW',
-    HIDE: 'HIDE'
+    SHOW: 'SHOW_NOTIFICATION',
+    HIDE: 'HIDE_NOTIFICATION'
 }
 
 export const CONFIRMATION = {
-    SHOW: 'SHOW',
-    HIDE: 'HIDE'
+    SHOW: 'SHOW_CONFIRMATION',
+    HIDE: 'HIDE_CONFIRMATION'
 }

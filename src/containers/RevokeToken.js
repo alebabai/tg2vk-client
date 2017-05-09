@@ -1,11 +1,25 @@
 import { connect } from 'react-redux'
-import { user } from '../actions'
+import { user, confirmation } from '../actions'
 import { RevokeToken } from '../components/Views'
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        revokeToken: (code) => {
-            dispatch(user.revokeToken(code))
+        revokeTokenWithConfirm: (code) => {
+            dispatch(confirmation.show({
+                title: 'Warning!',
+                question: 'Are you sure?',
+                message: 'It will reset all your TG2VK setting!',
+                buttons: {
+                    confirm: {
+                        text: 'Allah',
+                        action: user.revokeToken(code)
+                    },
+                    close: {
+                        text: 'Cancel',
+                        action: confirmation.hide()
+                    }
+                }
+            }))
         }
     }
 }

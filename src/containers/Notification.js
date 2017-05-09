@@ -3,11 +3,21 @@ import { notification } from '../actions'
 import Notification from '../components/Notification'
 
 const mapStateToProps = (state) => {
-    return { ...state.notification }
+    return {
+        buttons: {
+            close: {
+                text: 'Close',
+                action: notification.hide()
+            }
+        },
+        ...state.notification
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        getActionDispatcher: (action) => () => dispatch(action)
+    }
 }
 
 export default connect(

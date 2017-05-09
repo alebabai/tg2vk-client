@@ -4,11 +4,24 @@ import Confirmation from '../components/Confirmation'
 
 
 const mapStateToProps = (state) => {
-    return { ...state.confirmation }
+    return {
+        buttons: {
+            confirm: {
+                text: 'OK',
+            },
+            close: {
+                text: 'Cancel',
+                action: confirmation.hide()
+            }
+        },
+        ...state.confirmation
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        getActionDispatcher: (action) => () => dispatch(action)
+    }
 }
 
 export default connect(

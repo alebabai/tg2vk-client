@@ -2,16 +2,9 @@ import { ACTION_TYPES } from '../constants'
 
 const defaultState = {
     visible: false,
-    title: '',
-    question: '',
-    text: '',
     buttons: {
-        confirm: {
-            text: ''
-        },
-        close: {
-            text: ''
-        }
+        confirm: {},
+        close: {}
     }
 }
 
