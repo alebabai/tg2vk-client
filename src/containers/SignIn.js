@@ -3,15 +3,16 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import { userActions } from '../actions'
 import { SignIn } from '../components/Views'
+import queryString from 'query-string'
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    const token = ownProps.location.hash.substr(1);
+    const query = queryString.parse(ownProps.location.search)
     return {
-        implicitFlow: !!token,
-        triggerSingInFlow: (tokenParam = token) => {
-            if(!!tokenParam) {
-                dispatch(userActions.signIn(tokenParam))
-                dispatch(push('/'))
+        implicitFlow: !!query.token,
+        triggerSingInFlow: (options = query) => {
+            if(!!options.token) {
+                dispatch(userActions.signIn(options.token))
+                setTimeout(() => dispatch(push(options.redirect || '/')), 1000)
             }
         }
     }

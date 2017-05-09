@@ -26,7 +26,7 @@ const store = createStore(
     app: reducers,
     router: routerReducer
   }),
-  applyMiddleware( tokenStorageMiddleware, logger, reduxRouterMiddleware)
+  applyMiddleware(tokenStorageMiddleware, logger, reduxRouterMiddleware)
 )
 
 ReactDOM.render(
