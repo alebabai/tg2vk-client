@@ -53,7 +53,7 @@ class RevokeToken extends Component {
                             <FormControl.Feedback />
                             <HelpBlock>Please, provide full url from <a href='https://oauth.vk.com/'>https://oauth.vk.com/</a></HelpBlock>
                             <ButtonToolbar>
-                                <Button onClick={this.showDialog} bsSize='large' block>Send token</Button>
+                                <Button onClick={this.showDialog} bsSize='large' block>Send code</Button>
                             </ButtonToolbar>
                         </FormGroup>
                     </form>
