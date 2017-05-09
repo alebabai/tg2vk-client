@@ -38,7 +38,7 @@ ReactDOM.render(
           <Route path="/revoke-token" component={RevokeToken} />
           <Route path="/settings" component={Settings} />
           <Route path="/sign-in" component={SignIn} />
-          <Route component={ErrorMessage({ message: 'Page not found' })} />
+          <Route component={ErrorMessage({ title: 'Error', message: 'Page not found' })} />
         </Switch>
       </App>
     </ConnectedRouter>
