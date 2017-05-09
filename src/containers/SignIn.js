@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-import { userActions } from '../actions'
+import { user } from '../actions'
 import { SignIn } from '../components/Views'
 import queryString from 'query-string'
 
@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         implicitFlow: !!query.token,
         triggerSingInFlow: (options = query) => {
             if(!!options.token) {
-                dispatch(userActions.signIn(options.token))
+                dispatch(user.signIn(options.token))
                 setTimeout(() => dispatch(push(options.redirect || '/')), 1000)
             }
         }

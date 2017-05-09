@@ -1,1 +1,3 @@
-export const SESSION_STORAGE_TOKEN_KEY = 'tg2vk-token'
+export const SESSION_STORAGE = {
+    TOKEN_KEY: 'tg2vk-token'
+}

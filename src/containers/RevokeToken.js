@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
-import { userActions } from '../actions'
+import { user } from '../actions'
 import { RevokeToken } from '../components/Views'
 
 const mapDispatchToProps = (dispatch) => {
     return {
         revokeToken: (code) => {
-            dispatch(userActions.revokeToken(code))
+            dispatch(user.revokeToken(code))
         }
     }
 }

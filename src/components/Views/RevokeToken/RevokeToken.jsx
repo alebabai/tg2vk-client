@@ -6,7 +6,10 @@ class RevokeToken extends Component {
         super(props)
         this.state = {
             value: '',
-            showModal: false
+            showModal: false,
+            result: {
+                showModal: props.showModal
+            }
         }
     }
 
@@ -17,6 +20,14 @@ class RevokeToken extends Component {
 
     closeDialog = () => {
         this.setState({ showModal: false })
+    }
+
+    closeResultDialog = () => {
+        this.setState({
+            result: {
+                showModal: false
+            }
+        });
     }
 
     getValidationState = () => {
@@ -69,6 +80,17 @@ class RevokeToken extends Component {
                     <Modal.Footer>
                         <Button onClick={this.sendToken}>OK</Button>
                         <Button onClick={this.closeDialog}>Cancel</Button>
+                    </Modal.Footer>
+                </Modal>
+                <Modal show={this.state.result.showModal} onHide={this.closeResultDialog}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>{this.props.title}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>{this.props.message}</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={this.closeResultDialog}>OK</Button>
                     </Modal.Footer>
                 </Modal>
             </div>

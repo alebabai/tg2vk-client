@@ -1,6 +1,9 @@
-import { combineReducers } from 'redux'
-import { singIn } from './user'
+import user from './user'
+import confirmation from './confirmation'
+import notification from './notification'
 
-export default combineReducers({
-    user: singIn
-})
+export default {
+    user,
+    confirmation,
+    notification
+}

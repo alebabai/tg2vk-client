@@ -1,5 +1,9 @@
-import * as userActions from './userActions'
+import * as user from './user'
+import * as confirmation from './confirmation'
+import * as notification from './notification'
 
 export {
-    userActions
+    user,
+    confirmation,
+    notification
 }

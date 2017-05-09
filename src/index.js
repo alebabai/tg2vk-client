@@ -24,7 +24,7 @@ const reduxRouterMiddleware = routerMiddleware(history)
 
 const store = createStore(
   combineReducers({
-    app: reducers,
+    ...reducers,
     router: routerReducer
   }),
   applyMiddleware(tokenStorageMiddleware, logger, reduxRouterMiddleware)

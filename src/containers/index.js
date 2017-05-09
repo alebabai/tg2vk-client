@@ -1,3 +1,5 @@
 export { default as SignIn } from './SignIn'
 export { default as Header } from './Header'
-export { default as RevokeToken } from './RevokeToken.js'
+export { default as RevokeToken } from './RevokeToken'
+export { default as Confirmation } from './Confirmation'
+export { default as Notification } from './Notification'

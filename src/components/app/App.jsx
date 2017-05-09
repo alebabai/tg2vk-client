@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import { Header } from '../../containers'
+import { Header, Confirmation, Notification } from '../../containers'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        {this.props.children}
-      </div>
-    )
-  }
-}
+const App = (props) => (
+  <div className='app'>
+    <Header />
+    {props.children}
+    <Confirmation />
+    <Notification />
+  </div>
+)
 
 export default App
