@@ -11,7 +11,8 @@ import { Route, Switch } from 'react-router'
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 
 import App from './components/App'
-import { Home, Settings, ErrorMessage } from './components/Views'
+// import { Home, Settings } from './components/Views'
+import { ErrorMessage } from './components/Views'
 import { SignIn, RevokeToken } from './containers'
 import reducers from './reducers'
 import { tokenStorageMiddleware } from './middlewares'
@@ -34,9 +35,9 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <App>
         <Switch>
-          <Route exact path="/" component={Home} />
+          {/*<Route path="/" component={Home} />
+          <Route path="/settings" component={Settings} />*/}
           <Route path="/revoke-token" component={RevokeToken} />
-          <Route path="/settings" component={Settings} />
           <Route path="/sign-in" component={SignIn} />
           <Route component={ErrorMessage({ title: 'Error', message: 'Page not found' })} />
         </Switch>

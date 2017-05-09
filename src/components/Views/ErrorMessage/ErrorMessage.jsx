@@ -1,5 +1,5 @@
 import React from 'react'
-import { Panel, Jumbotron } from 'react-bootstrap'
+import { Jumbotron } from 'react-bootstrap'
 
 const ErrorMessage = (props = { title: 'Error', message: "Unknown error" }) => () => (
     <div className='container'>
