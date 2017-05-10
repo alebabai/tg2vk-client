@@ -3,23 +3,23 @@ import { ACTION_TYPES, OTHER } from '../constants'
 import { spinner, error } from '../actions'
 
 export const protectedRoutesMiddleware = store => next => action => {
-    next(action)
     const { token } = store.getState().user
-    const { pathname } = action.payload
     const allRoutes = Object.values(OTHER.ROUTES)
     const allowedRoutes = [OTHER.ROUTES.SING_IN, OTHER.ROUTES.ERROR]
     switch (action.type) {
         case '@@router/LOCATION_CHANGE':
+            const { pathname } = action.payload
             if (!token && allRoutes.includes(pathname) && !allowedRoutes.includes(pathname)) {
                 store.dispatch(error.throwUp({
                     title: 'Access denied', message: 'NOT AUTHORIZED'
                 }))
                 store.dispatch(push(OTHER.ROUTES.ERROR))
             }
-            break;
+            break
         default:
-            break;
+            break
     }
+    return next(action)
 }
 
 export const tokenStorageMiddleware = store => next => action => {
@@ -31,9 +31,9 @@ export const tokenStorageMiddleware = store => next => action => {
                 store.dispatch(push(action.payload.redirect || '/'))
                 store.dispatch(spinner.hide())
             }, 1000)
-            break;
+            break
         default:
-            break;
+            break
     }
     return next(action)
 }
