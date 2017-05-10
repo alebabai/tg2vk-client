@@ -1,15 +1,11 @@
 import { ACTION_TYPES } from '../constants'
 
-export const signIn = (token) => ({
+export const signIn = payload => ({
    type: ACTION_TYPES.USER.SIGN_IN,
-   payload: {
-       token
-   }
+   payload
 })
 
-export const revokeToken = (code) => ({
+export const revokeToken = payload => ({
    type: ACTION_TYPES.USER.REVOKE_TOKEN,
-   payload: {
-       code
-   }
+   payload
 })

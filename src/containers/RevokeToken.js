@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => {
                 buttons: {
                     confirm: {
                         text: 'Allah',
-                        action: user.revokeToken(code)
+                        action: user.revokeToken({code})
                     },
                     close: {
                         text: 'Cancel',

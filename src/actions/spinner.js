@@ -6,7 +6,7 @@ export const hide = () => {
     }
 }
 
-export const show = (payload) => {
+export const show = payload => {
     return {
         type: ACTION_TYPES.SPINNER.SHOW,
         payload

@@ -1,9 +1,8 @@
 import { connect } from 'react-redux'
-import { notification } from '../actions'
 import Spinner from '../components/Spinner'
 
 const mapStateToProps = (state) => ({
-    ...state.notification
+    ...state.spinner
 })
 
 export default connect(

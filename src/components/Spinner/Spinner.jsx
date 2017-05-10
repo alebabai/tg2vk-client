@@ -7,7 +7,7 @@ export const Spinner = (props) => (
             <Modal.Title>{props.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <ProgressBar active now={100} />
+            <ProgressBar active now={props.progress} />
         </Modal.Body>
         <Modal.Footer>
         </Modal.Footer>
