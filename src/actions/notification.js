@@ -12,3 +12,8 @@ export const show = payload => {
         payload
     }
 }
+
+export default {
+    hide,
+    show
+}

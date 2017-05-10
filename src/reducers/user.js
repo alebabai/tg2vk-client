@@ -5,7 +5,7 @@ const defaultState = {
     token
 }
 
-const user = (state = defaultState, action) => {
+export const user = (state = defaultState, action) => {
     switch (action.type) {
         case ACTION_TYPES.USER.SIGN_IN:
             return { ...state, ...action.payload }

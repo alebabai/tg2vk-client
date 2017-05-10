@@ -17,3 +17,10 @@ export const SPINNER = {
     SHOW: 'SPINNER_SHOW',
     HIDE: 'SPINNER_HIDE'
 }
+
+export default {
+    USER,
+    CONFIRMATION,
+    NOTIFICATION,
+    SPINNER
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
 
-const Confirmation = (props) => {
+export const Confirmation = (props) => {
     const closeHandler = props.getActionDispatcher(props.buttons.close.action)
     const confirmHandler = () => { 
         props.getActionDispatcher(props.buttons.confirm.action)()

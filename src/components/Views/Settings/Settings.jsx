@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Settings = () => (
+export const Settings = () => (
     <div>
         <h2>Settings</h2>
     </div>

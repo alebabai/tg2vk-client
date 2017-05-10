@@ -7,7 +7,7 @@ const defaultState = {
     }
 }
 
-const notification = (state = defaultState, action) => {
+export const notification = (state = defaultState, action) => {
     switch (action.type) {
         case ACTION_TYPES.NOTIFICATION.SHOW:
             return {

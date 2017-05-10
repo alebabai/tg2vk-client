@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Panel, FormGroup, FormControl, HelpBlock, Button, ButtonToolbar } from 'react-bootstrap'
 
-class RevokeToken extends Component {
+export class RevokeToken extends Component {
     constructor(props) {
         super(props)
         this.state = { value: '' }

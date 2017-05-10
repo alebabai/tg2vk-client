@@ -14,8 +14,8 @@ import App from './components/App'
 // import { Home, Settings } from './components/Views'
 import { ErrorMessage } from './components/Views'
 import { SignIn, RevokeToken } from './containers'
-import reducers from './reducers'
-import { tokenStorageMiddleware } from './middlewares'
+import * as reducers from './reducers'
+import { tokenStorageMiddleware } from './middlewares/user'
 
 const history = createHistory()
 

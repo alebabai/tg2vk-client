@@ -8,7 +8,7 @@ const defaultState = {
     }
 }
 
-const confirmation = (state = defaultState, action) => {
+export const confirmation = (state = defaultState, action) => {
     switch (action.type) {
         case ACTION_TYPES.CONFIRMATION.SHOW:
             return {

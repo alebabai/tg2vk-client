@@ -9,8 +9,6 @@ export const Spinner = (props) => (
         <Modal.Body>
             <ProgressBar active now={props.progress} />
         </Modal.Body>
-        <Modal.Footer>
-        </Modal.Footer>
     </Modal>
 )
 

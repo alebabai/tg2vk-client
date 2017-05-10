@@ -1,11 +1,4 @@
-import user from './user'
-import confirmation from './confirmation'
-import notification from './notification'
-import spinner from './spinner'
-
-export default {
-    user,
-    confirmation,
-    notification,
-    spinner
-}
+export { default as user } from './user'
+export { default as confirmation } from './confirmation'
+export { default as notification } from './notification'
+export { default as spinner } from './spinner'

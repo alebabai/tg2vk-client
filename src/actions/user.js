@@ -9,3 +9,8 @@ export const revokeToken = payload => ({
    type: ACTION_TYPES.USER.REVOKE_TOKEN,
    payload
 })
+
+export default {
+    signIn,
+    revokeToken
+}

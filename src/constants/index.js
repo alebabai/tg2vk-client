@@ -1,7 +1,2 @@
-import * as ACTION_TYPES from './actionTypes'
-import * as OTHER from './other'
-
-export {
-    ACTION_TYPES,
-    OTHER
-}
+export { default as ACTION_TYPES } from './actionTypes'
+export { default as OTHER } from './other'

@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
                 message: 'It will reset all your TG2VK setting!',
                 buttons: {
                     confirm: {
-                        text: 'Allah',
+                        text: 'OK',
                         action: user.revokeToken({code})
                     },
                     close: {
