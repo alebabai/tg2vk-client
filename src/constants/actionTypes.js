@@ -3,12 +3,17 @@ export const USER = {
     REVOKE_TOKEN: 'REVOKE_TOKEN'
 }
 
+export const CONFIRMATION = {
+    SHOW: 'SHOW_CONFIRMATION',
+    HIDE: 'HIDE_CONFIRMATION'
+}
+
 export const NOTIFICATION = {
     SHOW: 'SHOW_NOTIFICATION',
     HIDE: 'HIDE_NOTIFICATION'
 }
 
-export const CONFIRMATION = {
-    SHOW: 'SHOW_CONFIRMATION',
-    HIDE: 'HIDE_CONFIRMATION'
+export const SPINNER = {
+    SHOW: 'SPINNER_SHOW',
+    HIDE: 'SPINNER_HIDE'
 }
