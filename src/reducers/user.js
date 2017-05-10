@@ -1,6 +1,6 @@
 import { ACTION_TYPES, OTHER } from '../constants'
 
-const token = sessionStorage.getItem(OTHER.SESSION_STORAGE.TOKEN_KEY)
+const token = sessionStorage.getItem(OTHER.KEYS.TOKEN)
 const defaultState = {
     token
 }

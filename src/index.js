@@ -12,10 +12,10 @@ import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-r
 
 import App from './components/App'
 // import { Home, Settings } from './components/Views'
-import { ErrorMessage } from './components/Views'
-import { SignIn, RevokeToken } from './containers'
+import { SignIn, RevokeToken, ErrorBox } from './containers'
 import * as reducers from './reducers'
-import { tokenStorageMiddleware } from './middlewares/user'
+import { auth } from './middlewares'
+import { OTHER } from './constants'
 
 const history = createHistory()
 
@@ -27,7 +27,7 @@ const store = createStore(
     ...reducers,
     router: routerReducer
   }),
-  applyMiddleware(tokenStorageMiddleware, logger, reduxRouterMiddleware)
+  applyMiddleware(logger, reduxRouterMiddleware, auth.protectedRoutesMiddleware, auth.tokenStorageMiddleware)
 )
 
 ReactDOM.render(
@@ -35,11 +35,11 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <App>
         <Switch>
-          {/*<Route path="/" component={Home} />
-          <Route path="/settings" component={Settings} />*/}
-          <Route path="/revoke-token" component={RevokeToken} />
-          <Route path="/sign-in" component={SignIn} />
-          <Route component={ErrorMessage({ title: 'Error', message: 'Page not found' })} />
+          {/*<Route path={OTHER.ROUTES.ROOT}  component={Home} />
+          <Route path={OTHER.ROUTES.SETTINGS}  component={Settings} />*/}
+          <Route path={OTHER.ROUTES.REVOKE_TOKEN} component={RevokeToken} />
+          <Route path={OTHER.ROUTES.SING_IN} component={SignIn} />
+          <Route component={ErrorBox} />
         </Switch>
       </App>
     </ConnectedRouter>

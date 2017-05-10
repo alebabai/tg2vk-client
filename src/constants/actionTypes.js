@@ -18,9 +18,14 @@ export const SPINNER = {
     HIDE: 'SPINNER_HIDE'
 }
 
+export const ERROR = {
+    THROW_UP: 'ERROR_THROW_UP'
+}
+
 export default {
     USER,
     CONFIRMATION,
     NOTIFICATION,
-    SPINNER
+    SPINNER,
+    ERROR
 }

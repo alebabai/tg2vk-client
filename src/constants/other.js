@@ -1,7 +1,16 @@
-export const SESSION_STORAGE = {
-    TOKEN_KEY: 'tg2vk-token'
+export const KEYS = {
+    TOKEN: 'tg2vk-token'
+}
+
+export const ROUTES = {
+    ROOT: '/',
+    ERROR: '/error',
+    SING_IN: '/sign-in',
+    SETTINGS: '/settings',
+    REVOKE_TOKEN: '/revoke-token'
 }
 
 export default {
-    SESSION_STORAGE
+    ROUTES,
+    KEYS
 }

@@ -1,10 +1,10 @@
 import React from 'react'
-import ErrorMessage from '../ErrorMessage'
+import ErrorBox from '../ErrorBox'
 
-export const SignIn = (props) => (
+export const SignIn = props => (
     props.implicitFlow 
     ? <div className='empty'/> 
-    : ErrorMessage({title: 'Sorry...', message: 'Not supported'})()
+    : ErrorBox({title: 'Sorry...', message: 'Not supported yet'})
 )
 
 export default SignIn
