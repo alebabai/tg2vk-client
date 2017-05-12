@@ -5,11 +5,9 @@ const mapStateToProps = state => ({
     ...state.confirmation
 })
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getActionDispatcher: (action) => () => dispatch(action)
-    }
-}
+const mapDispatchToProps = (dispatch) => ({
+    getActionDispatcher: (action) => () => dispatch(action)
+})
 
 export default connect(
     mapStateToProps,

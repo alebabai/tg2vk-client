@@ -1,4 +1,5 @@
 import React from 'react'
+import { string, bool, number } from 'prop-types'
 import { Modal, ProgressBar } from 'react-bootstrap'
 
 export const Spinner = props => (
@@ -11,5 +12,17 @@ export const Spinner = props => (
         </Modal.Body>
     </Modal>
 )
+
+Spinner.propTypes = {
+    visible: bool.isRequired,
+    title: string,
+    progress: number
+}
+
+Spinner.defaultProps = {
+    visible: false,
+    title: 'Loading...',
+    progress: 100
+}
 
 export default Spinner
