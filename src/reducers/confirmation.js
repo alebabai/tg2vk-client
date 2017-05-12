@@ -1,11 +1,7 @@
 import { ACTION_TYPES } from '../constants'
 
 const defaultState = {
-    visible: false,
-    buttons: {
-        confirm: {},
-        close: {}
-    }
+    visible: false
 }
 
 export const confirmation = (state = defaultState, action) => {
