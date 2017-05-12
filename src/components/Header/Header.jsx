@@ -10,10 +10,6 @@ const Header = (state) => (
             <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-            {/*<Nav>
-                <NavItem eventKey={1} href='/' onClick={() => state.changeView('/')}>Home</NavItem>
-                <NavItem eventKey={2} href='/settings' onClick={() => state.changeView('/settings')}>Settings</NavItem>
-            </Nav>*/}
             <Nav pullRight>
                 <NavItem eventKey={3} href='/revoke-token' onClick={ () => state.changeView('/revoke-token')}>Revoke Token</NavItem>
             </Nav>

@@ -1,11 +1,11 @@
 import { push } from 'react-router-redux'
-import { ACTION_TYPES, OTHER } from '../constants'
+import { ACTION_TYPES, OTHER, ROUTES } from '../constants'
 import { spinner, error } from '../actions'
 
 export const protectedRoutesMiddleware = store => next => action => {
     const { token } = store.getState().user
-    const allRoutes = Object.values(OTHER.ROUTES)
-    const allowedRoutes = [OTHER.ROUTES.SING_IN, OTHER.ROUTES.ERROR]
+    const allRoutes = Object.values(ROUTES.PATHS)
+    const allowedRoutes = ROUTES.ALLOWED_ROUTES
     switch (action.type) {
         case '@@router/LOCATION_CHANGE':
             const { pathname } = action.payload
@@ -13,7 +13,7 @@ export const protectedRoutesMiddleware = store => next => action => {
                 store.dispatch(error.throwUp({
                     title: 'Access denied', message: 'NOT AUTHORIZED'
                 }))
-                store.dispatch(push(OTHER.ROUTES.ERROR))
+                store.dispatch(push(ROUTES.PATHS.ERROR))
             }
             break
         default:
