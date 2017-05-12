@@ -2,6 +2,8 @@ import React from 'react'
 import { string, bool, func, shape } from 'prop-types'
 import { Modal, Button } from 'react-bootstrap'
 
+import { confirmation } from '../../actions'
+
 export const Confirmation = (props) => {
     const closeHandler = props.getActionDispatcher(props.buttons.close.action)
     const confirmHandler = () => {
@@ -26,7 +28,7 @@ export const Confirmation = (props) => {
 }
 
 Confirmation.propTypes = {
-    visible: bool,
+    visible: bool.isRequired,
     getActionDispatcher: func.isRequired,
     title: string,
     question: string,
@@ -42,9 +44,9 @@ Confirmation.propTypes = {
             text: string,
             action: shape({
                 type: string.isRequired
-            })
-        })
-    })
+            }).isRequired
+        }).isRequired
+    }).isRequired
 }
 
 Confirmation.defaultProps = {
@@ -54,7 +56,8 @@ Confirmation.defaultProps = {
             text: 'OK'
         },
         close: {
-            text: 'Cancel'
+            text: 'Cancel',
+            action: confirmation.hide()
         }
     }
 }

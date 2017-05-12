@@ -1,18 +1,9 @@
 import { connect } from 'react-redux'
-import { notification } from '../actions'
 import Notification from '../components/Notification'
 
-const mapStateToProps = (state) => {
-    return {
-        buttons: {
-            close: {
-                text: 'Close',
-                action: notification.hide()
-            }
-        },
-        ...state.notification
-    }
-}
+const mapStateToProps = state => ({
+    ...state.confirmation
+})
 
 const mapDispatchToProps = (dispatch) => {
     return {

@@ -1,10 +1,7 @@
 import { ACTION_TYPES } from '../constants'
 
 const defaultState = {
-    visible: false,
-    buttons: {
-        close: {}
-    }
+    visible: false
 }
 
 export const notification = (state = defaultState, action) => {
