@@ -26,7 +26,13 @@ const store = createStore(
     ...reducers,
     router: routerReducer
   }),
-  applyMiddleware(logger, reduxRouterMiddleware, auth.protectedRoutesMiddleware, auth.tokenStorageMiddleware)
+  applyMiddleware(
+    logger,
+    reduxRouterMiddleware,
+    auth.protectedRoutesMiddleware,
+    auth.tokenStorageMiddleware,
+    auth.revokeToken
+  )
 )
 
 ReactDOM.render(

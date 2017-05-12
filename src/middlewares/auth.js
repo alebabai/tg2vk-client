@@ -1,6 +1,7 @@
 import { push } from 'react-router-redux'
 import { ACTION_TYPES, OTHER, ROUTES } from '../constants'
-import { spinner, error } from '../actions'
+import { spinner, notification, error } from '../actions'
+import { USER } from '../api'
 
 export const protectedRoutesMiddleware = store => next => action => {
     const { token } = store.getState().user
@@ -38,7 +39,35 @@ export const tokenStorageMiddleware = store => next => action => {
     return next(action)
 }
 
+export const revokeToken = store => next => action => {
+    switch (action.type) {
+        case ACTION_TYPES.USER.REVOKE_TOKEN:
+            const { code } = action.payload
+            const { token } = store.getState().user
+            store.dispatch(spinner.show({ visible: true, title: 'Sending data...', progress: 100 }))
+            USER.authorize(code, token).then(res => {
+                store.dispatch(spinner.hide())
+                store.dispatch(notification.show({
+                    title: 'Success!',
+                    header: 'VK token has been successfully revoked.'
+                }))
+            }).catch(e => {
+                store.dispatch(spinner.hide())
+                store.dispatch(notification.show({
+                    title: 'Error...',
+                    header: 'Something goes wrong',
+                    text: e.message
+                }))
+            })
+            break
+        default:
+            break
+    }
+    return next(action)
+}
+
 export default {
     protectedRoutesMiddleware,
-    tokenStorageMiddleware
+    tokenStorageMiddleware,
+    revokeToken
 }

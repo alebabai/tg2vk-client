@@ -42,7 +42,7 @@ Notification.defaultProps = {
     visible: false,
     buttons: {
         close: {
-            text: 'Close',
+            title: 'Close',
             action: notification.hide()
         }
     }
