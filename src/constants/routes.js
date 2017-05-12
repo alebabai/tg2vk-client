@@ -1,12 +1,10 @@
 export const PATHS = {
-    ROOT: '/',
     ERROR: '/error',
-    SING_IN: '/sign-in',
-    SETTINGS: '/settings',
+    SIGN_IN: '/sign-in',
     REVOKE_TOKEN: '/revoke-token'
 }
 
-export const ALLOWED_ROUTES = [PATHS.SING_IN, PATHS.ERROR]
+export const ALLOWED_ROUTES = [PATHS.SIGN_IN, PATHS.ERROR]
 
 export default {
     PATHS,

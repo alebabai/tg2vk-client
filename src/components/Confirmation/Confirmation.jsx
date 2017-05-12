@@ -4,7 +4,7 @@ import { Modal, Button } from 'react-bootstrap'
 
 import { confirmation } from '../../actions'
 
-export const Confirmation = (props) => {
+export const Confirmation = props => {
     const closeHandler = props.getActionDispatcher(props.buttons.close.action)
     const confirmHandler = () => {
         props.getActionDispatcher(props.buttons.confirm.action)()
@@ -20,8 +20,8 @@ export const Confirmation = (props) => {
                 <p>{props.message}</p>
             </Modal.Body>
             <Modal.Footer>
-                <Button bsStyle='primary' onClick={confirmHandler}>{props.buttons.confirm.text}</Button>
-                <Button onClick={closeHandler}>{props.buttons.close.text}</Button>
+                <Button bsStyle='primary' onClick={confirmHandler}>{props.buttons.confirm.title}</Button>
+                <Button onClick={closeHandler}>{props.buttons.close.title}</Button>
             </Modal.Footer>
         </Modal>
     )
@@ -35,13 +35,13 @@ Confirmation.propTypes = {
     message: string,
     buttons: shape({
         confirm: shape({
-            text: string,
+            title: string,
             action: shape({
                 type: string.isRequired
             })
         }),
         close: shape({
-            text: string,
+            title: string,
             action: shape({
                 type: string.isRequired
             }).isRequired
@@ -53,10 +53,10 @@ Confirmation.defaultProps = {
     visible: false,
     buttons: {
         confirm: {
-            text: 'OK'
+            title: 'OK'
         },
         close: {
-            text: 'Cancel',
+            title: 'Cancel',
             action: confirmation.hide()
         }
     }

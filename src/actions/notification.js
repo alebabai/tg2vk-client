@@ -1,17 +1,13 @@
 import { ACTION_TYPES } from '../constants'
 
-export const hide = () => {
-    return {
-        type: ACTION_TYPES.NOTIFICATION.HIDE
-    }
-}
+export const hide = () => ({
+    type: ACTION_TYPES.NOTIFICATION.HIDE
+})
 
-export const show = payload => {
-    return {
-        type: ACTION_TYPES.NOTIFICATION.SHOW,
-        payload
-    }
-}
+export const show = payload => ({
+    type: ACTION_TYPES.NOTIFICATION.SHOW,
+    payload
+})
 
 export default {
     hide,

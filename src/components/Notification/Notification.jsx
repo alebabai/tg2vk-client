@@ -16,7 +16,7 @@ const Notification = (props) => {
                 <p>{props.text}</p>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={closeHandler}>{props.buttons.close.text}</Button>
+                <Button onClick={closeHandler}>{props.buttons.close.title}</Button>
             </Modal.Footer>
         </Modal>
     )
@@ -30,7 +30,7 @@ Notification.propTypes = {
     message: string,
     buttons: shape({
         close: shape({
-            text: string,
+            title: string,
             action: shape({
                 type: string.isRequired
             }).isRequired

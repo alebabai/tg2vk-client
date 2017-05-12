@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import Notification from '../components/Notification'
 
 const mapStateToProps = state => ({
-    ...state.confirmation
+    ...state.notification
 })
 
 const mapDispatchToProps = (dispatch) => ({

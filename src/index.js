@@ -35,7 +35,7 @@ ReactDOM.render(
       <App>
         <Switch>
           <Route path={ROUTES.PATHS.REVOKE_TOKEN} component={RevokeToken} />
-          <Route path={ROUTES.PATHS.SING_IN} component={SignIn} />
+          <Route path={ROUTES.PATHS.SIGN_IN} component={SignIn} />
           <Route component={ErrorBox} />
         </Switch>
       </App>

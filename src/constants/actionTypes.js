@@ -3,6 +3,10 @@ export const USER = {
     REVOKE_TOKEN: 'USER_REVOKE_TOKEN'
 }
 
+export const HEADER = {
+    CHANGE: 'HEADER_CHANGE'
+}
+
 export const CONFIRMATION = {
     SHOW: 'CONFIRMATION_SHOW',
     HIDE: 'CONFIRMATION_HIDE'
@@ -24,6 +28,7 @@ export const ERROR = {
 
 export default {
     USER,
+    HEADER,
     CONFIRMATION,
     NOTIFICATION,
     SPINNER,
