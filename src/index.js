@@ -34,8 +34,8 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <App>
         <Switch>
-          <Route path={ROUTES.REVOKE_TOKEN} component={RevokeToken} />
-          <Route path={ROUTES.SING_IN} component={SignIn} />
+          <Route path={ROUTES.PATHS.REVOKE_TOKEN} component={RevokeToken} />
+          <Route path={ROUTES.PATHS.SING_IN} component={SignIn} />
           <Route component={ErrorBox} />
         </Switch>
       </App>
